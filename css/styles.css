@@ -27,7 +27,10 @@ body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   color: var(--color-text);
-  background-color: var(--color-background);
+  background:
+    radial-gradient(circle at top left, rgba(194, 136, 71, 0.11), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(74, 46, 25, 0.08), transparent 55%),
+    var(--color-background);
   line-height: 1.65;
 }
 
@@ -87,6 +90,7 @@ p {
   position: sticky;
   top: 0;
   z-index: 10;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
 }
 
 .header-inner {
@@ -157,14 +161,33 @@ p {
 
 .hero {
   padding: 2rem 0 1.5rem;
-  background: linear-gradient(
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(
       135deg,
-      rgba(74, 46, 25, 0.85),
-      rgba(194, 136, 71, 0.8)
+      rgba(74, 46, 25, 0.88),
+      rgba(194, 136, 71, 0.82)
     ),
     url("../images/hero-coffee.jpg") center/cover no-repeat;
   color: #fff9f2;
   text-align: center;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.08), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(0, 0, 0, 0.15), transparent 55%);
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
 }
 
 .hero h1 {
@@ -199,10 +222,18 @@ p {
 
 .section {
   padding: 1.75rem 0;
+  position: relative;
 }
 
 .section-alt {
-  background-color: #f8efdf;
+  background:
+    repeating-linear-gradient(
+      135deg,
+      #f8efdf,
+      #f8efdf 4px,
+      #f3e4cf 4px,
+      #f3e4cf 8px
+    );
 }
 
 .section-header {
@@ -212,6 +243,31 @@ p {
 .section-header p {
   color: var(--color-muted);
   font-size: 0.9rem;
+}
+
+/* Add a subtle “card” feel to any section content */
+.section > .container {
+  background-color: rgba(255, 249, 242, 0.96);
+  border-radius: 0.9rem;
+  border: 1px solid rgba(234, 215, 186, 0.9);
+  padding: 1.25rem 1rem;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.03);
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: min(260px, 70%);
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(59, 36, 19, 0.25),
+    transparent
+  );
 }
 
 /* Cards */
@@ -305,6 +361,7 @@ p {
   padding: 1rem 0;
   margin-top: 2rem;
   font-size: 0.8rem;
+  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.18);
 }
 
 .footer-inner {
