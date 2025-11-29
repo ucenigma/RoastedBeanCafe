@@ -25,9 +25,10 @@ html {
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: var(--color-text);
   background-color: var(--color-background);
+  line-height: 1.65;
 }
 
 /* Typography */
@@ -35,7 +36,30 @@ body {
 h1, h2, h3, h4 {
   margin-top: 0;
   color: var(--color-dark-brown);
-  font-family: "Georgia", "Times New Roman", serif;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+h1 {
+  font-size: 1.9rem;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 1.45rem;
+  margin-bottom: 0.75rem;
+}
+
+.section-header p {
+  font-size: 0.95rem;
+  color: var(--color-muted);
+  font-weight: 300;
+}
+
+p, li {
+  font-size: 0.97rem;
+  font-weight: 300;
 }
 
 p {
