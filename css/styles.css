@@ -300,19 +300,17 @@ p {
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
 }
 
-/* Simple image placeholder */
-
-.image-placeholder {
-  width: 100%;
-  padding-top: 56%;
-  border-radius: 0.75rem;
-  background: linear-gradient(
-      135deg,
-      rgba(74, 46, 25, 0.22),
-      rgba(194, 136, 71, 0.22)
-    );
-  margin-bottom: 0.65rem;
+.card-image {
+  width: 100%;            /* Fills card horizontally */
+  height: 170px;          /* Normalized consistent height */
+  object-fit: cover;      /* Crops instead of stretching */
+  border-radius: 0.75rem; /* Same roundness as cards */
+  display: block;
+  margin-bottom: 0.65rem; /* Space between image + title */
 }
+
+
+
 
 /* Lists / Tables */
 
@@ -413,6 +411,10 @@ p {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .card-image {
+    height: 200px;
+  }
+
   /* Hours & Location, and any other .two-column sections */
   .two-column {
     display: grid;
@@ -458,6 +460,10 @@ p {
   /* 3-column grids on desktop */
   .card-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .card-image {
+    height: 230px;
   }
 
   main {
